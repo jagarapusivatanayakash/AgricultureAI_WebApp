@@ -1,0 +1,34 @@
+{% extends 'top.html' %}
+{% block body %}
+    <div class="row">
+        <div class="col-md-4"></div>
+                <div class="col-md-4">
+                    <center><div class=form__title>Crop recommendation</div></center>
+                        <form class="form-horizontal" action="{{ url_for('crop_predict') }}" method="POST">
+                            <div class="form-group">
+                                <input style="border: 1px solid black;" class="form-control" type="text" name="nitrogen" placeholder="Nitrogen eg. 50">
+                            </div>
+                            <div class="form-group">
+                                <input style="border: 1px solid black;" class="form-control" type="text" name="phosphorous" placeholder="Phosphorous eg. 60">
+                            </div>
+                            <div class="form-group">
+                                <input style="border: 1px solid black;" class="form-control" type="text" name="pottasium" placeholder="Pottasium eg. 50">
+                            </div>
+                            <div class="form-group">
+                                <input style="border: 1px solid black;" class="form-control" type="text" name="humidity" placeholder="Humidity (in %)">
+                            </div>
+                            <div class="form-group">
+                                <input style="border: 1px solid black;" class="form-control" type="text" name="temperature" placeholder="Temperature(in Celcius)">
+                            </div>
+                            <div class="form-group">
+                                <input style="border: 1px solid black;" class="form-control" type="text" name="ph" placeholder="ph value of soil">
+                            </div>
+                            <div class="form-group">
+                                <input style="border: 1px solid black;" class="form-control" type="text" name="rainfall" placeholder="Rainfall(in mm)">
+                            </div>
+                            <input type="submit" class="btn btn-info btn-block" value="Predict">
+                        </form>
+                </div>
+    </div>
+</html>
+{% endblock %}

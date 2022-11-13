@@ -1,0 +1,28 @@
+{% extends 'top.html' %}
+{% block body %}
+<div class="homecontainer">
+    <div class="content">
+        <center style=" position:absolute ;
+           top: 50%;
+           left: 45%;
+           transform: translate(-45%, -50%) ;">
+        <div class="title_head">
+            Agriculture
+        </div>
+        <div class="title_tail">
+            A Machine learning and Deep learning based web application for crop and Fertilizers recommendation and plant disease.
+        </div>
+        <br>
+        <br>
+        <div class="box_butten">\
+            <a href="{{ url_for('crop_recommend') }}" class="button" id="crop" style="width: 220px; padding: 15px 0; padding-left: 10px; padding-right: 10px; text-align: center;margin: 20px 10px;
+            border-radius: 25px;font-weight: bold;border: 2px solid #fff;background: transparent; color:#fff;cursor: pointer;">CROP RECOMMENDATION</a>
+            <a href="{{ url_for('fertilizer_recommendation') }}" id ='Fertilizers' style="width: 220px; padding: 15px 0; padding-left: 10px; padding-right: 10px; text-align: center;margin: 20px 10px;
+            border-radius: 25px;font-weight: bold;border: 2px solid #fff;background: transparent; color:#fff;cursor: pointer;" class="button">RECOMMENDATION</a>
+            <a href="{{ url_for('disease') }}" id ='dis'class="button"style="width: 250px; padding: 15px 0; padding-left: 10px; padding-right: 10px; text-align: center;margin: 20px 10px;
+            border-radius: 25px;font-weight: bold;border: 2px solid #fff;background: transparent; color:#fff;cursor: pointer;">DISEASE PREDICTION</a>
+        </div>
+        </center>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,132 @@
+<html>
+    <head>
+        <title>{{ title }}</title>
+        <link rel="icon" href="{{ url_for('static', filename = 'logo.png') }}" type="image/icon type">
+    <link href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.bootcss.com/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>  
+    <style>
+        html, body{ height:100%; margin:0; }
+    header{ height:50px;}
+    center {
+    display: block;
+    text-align: -webkit-center;
+    }
+    .button
+    {
+        width: 230px;
+        padding: 15px 0;
+        text-align: center;
+        margin: 20px 10px;
+        border-radius: 25px;
+        font-weight: bold;
+        border: 2px solid #fff;
+        background: transparent;
+        color:#fff;
+        cursor: pointer;
+    }
+    .social_github, .social_linkedin {
+    font-size: 25px;
+    margin-top: 5px;
+    background-color: rgba(0,0,0,.9);
+    padding: 10px;
+    cursor: pointer;
+    transition: all .2s ease-in-out!important;
+     }
+     .social_linkedin {
+    margin-right: 10px;
+    color: #0077b5;
+     }
+     a:-webkit-any-link {
+    color: -webkit-link;
+    cursor: pointer;
+     }
+    .box_buttons {
+    margin-top: 20px;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-justify-content: space-evenly;
+    justify-content: space-evenly;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+    }
+    .title_tail {
+    text-align: center;
+    margin-top: 10px;
+    color: azure;
+    margin-left: 10px;
+    margin-right: 10px;
+    }
+    .title_head {
+    text-align: center;
+    font-weight: 600;
+    font-size: 80px;
+    color: #fff;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    border-bottom: 3px solid #f5f5f5;
+     }
+    .content {
+    height: 90vh;
+    margin-top: -30px;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-align-content: center;
+    align-content: center;
+    -webkit-align-items: center;
+    align-items: center;
+    }
+    .homecontainer {-webkit-flex-direction: column;
+                   flex-direction: column;
+                   }
+    .form__title{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius:5px 5px 5px 5px;
+    font-size: 35px;
+    font-weight: 700;
+    color: #f5efe6;
+    background-color: rgba(0,0,0,.8);
+    padding: 5px;
+     }
+    /* Trick */
+    body{ 
+      display:flex; 
+      flex-direction:column; 
+    }
+      </style>  
+      </head>  
+<body>
+     <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top" style="background-color:black !important;">
+         <div class="container">
+            <a class="navbar-brand" href="#">Agriculture</a>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('home') }}">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('crop_recommend') }}">crop</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('disease') }}">disease</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('fertilizer_recommendation') }}">Fertilizers</a>
+                </li>
+            </ul>
+         </div>
+    </nav>
+    <main style=" background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url('/static/img/download.jpg'); background-position: 50%;
+                  background-size: cover;
+                  width: 100%;
+                  height: 100vh;
+                  position: relative;
+                  overflow-x: hidden;">
+        <div class="container-fluid">
+        {% block body %} {% endblock %}
+        </div>
+    </main>
+</body>
